@@ -35,10 +35,13 @@ article.post-preview {
 /* Compensate for the new border size for animated/translated thumbnail overlay
  * icons. We must do this separately for the comments page and everywhere else. */
 div#c-comments div#a-index div.post-preview div.preview:before,
-div#c-comments div#a-show  div.post-preview div.preview:before,
 div#c-comments div#a-index div.post-preview div.preview a:before,
+div#c-comments div#a-index div.post-preview div.preview a:after,
+div#c-comments div#a-show  div.post-preview div.preview:before,
 div#c-comments div#a-show  div.post-preview div.preview a:before,
+div#c-comments div#a-show  div.post-preview div.preview a:after,
 article.post-preview:before,
-article.post-preview a:before {
+article.post-preview a:before,
+article.post-preview a:after {
     margin: 3px !important;
 }
