@@ -1,0 +1,6 @@
+/* Hide the "+ -" links in "? + - touhou 100k" in tag lists. */
+.search-inc-tag { display: none; }
+.search-exl-tag { display: none; }
+
+/* Make the forum updated italicized link shut the fuck up. (issue #2229) */
+.forum-updated { font-style: normal !important; }
