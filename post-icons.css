@@ -1,95 +1,97 @@
-/* These settings are required to properly align the icons. */
-.post-preview a {
-    display:  inline-block;
-    position: relative;
-}
+@-moz-document domain('donmai.us') {
+    /* These settings are required to properly align the icons. */
+    .post-preview a {
+        display:  inline-block;
+        position: relative;
+    }
 
-/* General settings for all thumbnail icons. */
+    /* General settings for all thumbnail icons. */
 
-div#c-comments div#a-index div.post-preview div.preview:before,
-div#c-comments div#a-index div.post-preview div.preview a:before,
-div#c-comments div#a-index div.post-preview div.preview a:after,
-div#c-comments div#a-show  div.post-preview div.preview:before,
-div#c-comments div#a-show  div.post-preview div.preview a:before,
-div#c-comments div#a-show  div.post-preview div.preview a:after,
-article.post-preview:before,
-article.post-preview a:before,
-article.post-preview a:after {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    div#c-comments div#a-index div.post-preview div.preview:before,
+    div#c-comments div#a-index div.post-preview div.preview a:before,
+    div#c-comments div#a-index div.post-preview div.preview a:after,
+    div#c-comments div#a-show  div.post-preview div.preview:before,
+    div#c-comments div#a-show  div.post-preview div.preview a:before,
+    div#c-comments div#a-show  div.post-preview div.preview a:after,
+    article.post-preview:before,
+    article.post-preview a:before,
+    article.post-preview a:after {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
 
-    font-family: Tahoma, Arial, sans-serif;
-    font-size:   14px !important;
-    line-height: 20px !important;
+        font-family: Tahoma, Arial, sans-serif;
+        font-size:   14px !important;
+        line-height: 20px !important;
 
-    margin: 2px;
-    width:  20px !important;
-    height: 20px !important;
+        margin: 2px;
+        width:  20px !important;
+        height: 20px !important;
 
-    /* Prevent the icon from getting in the way of clicking on the thumbnail. */
-    pointer-events: none;
+        /* Prevent the icon from getting in the way of clicking on the thumbnail. */
+        pointer-events: none;
 
-    z-index: 100 !important;
-}
+        z-index: 100 !important;
+    }
 
-#c-comments #a-show  div.post-preview[data-tags~="translation_request"] div.preview a:before,
-#c-comments #a-index div.post-preview[data-tags~="translation_request"] div.preview a:before,
-article.post-preview[data-tags~="translation_request"] a:before {
-    content: "JP";
+    #c-comments #a-show  div.post-preview[data-tags~="translation_request"] div.preview a:before,
+    #c-comments #a-index div.post-preview[data-tags~="translation_request"] div.preview a:before,
+    article.post-preview[data-tags~="translation_request"] a:before {
+        content: "JP";
 
-    position: absolute;
-    bottom:   0;
-    right:    0;
-}
+        position: absolute;
+        bottom:   0;
+        right:    0;
+    }
 
-#c-comments #a-show  div.post-preview[data-tags~="translated"] div.preview a:before,
-#c-comments #a-index div.post-preview[data-tags~="translated"] div.preview a:before,
-article.post-preview[data-tags~="translated"] a:before {
-    content: "EN";
+    #c-comments #a-show  div.post-preview[data-tags~="translated"] div.preview a:before,
+    #c-comments #a-index div.post-preview[data-tags~="translated"] div.preview a:before,
+    article.post-preview[data-tags~="translated"] a:before {
+        content: "EN";
 
-    position: absolute;
-    bottom:   0;
-    right:    0;
-}
+        position: absolute;
+        bottom:   0;
+        right:    0;
+    }
 
-#c-comments #a-show  div.post-preview[data-flags~="pending"] div.preview a:after,
-#c-comments #a-index div.post-preview[data-flags~="pending"] div.preview a:after,
-article.post-preview[data-flags~="pending"] a:after {
-    content: "\1F552";
+    #c-comments #a-show  div.post-preview[data-flags~="pending"] div.preview a:after,
+    #c-comments #a-index div.post-preview[data-flags~="pending"] div.preview a:after,
+    article.post-preview[data-flags~="pending"] a:after {
+        content: "\1F552";
 
-    position: absolute;
-    bottom:   0;
-    left:     0;
-}
+        position: absolute;
+        bottom:   0;
+        left:     0;
+    }
 
-#c-comments #a-show  div.post-preview[data-flags~="flagged"] div.preview a:after,
-#c-comments #a-index div.post-preview[data-flags~="flagged"] div.preview a:after,
-article.post-preview[data-flags~="flagged"] a:after {
-    content: "\2691";
+    #c-comments #a-show  div.post-preview[data-flags~="flagged"] div.preview a:after,
+    #c-comments #a-index div.post-preview[data-flags~="flagged"] div.preview a:after,
+    article.post-preview[data-flags~="flagged"] a:after {
+        content: "\2691";
 
-    font-size: 20px !important;
+        font-size: 20px !important;
 
-    position: absolute;
-    bottom:   0;
-    left:     0;
-}
+        position: absolute;
+        bottom:   0;
+        left:     0;
+    }
 
-#c-comments #a-show  div.post-preview[data-flags~="deleted"] div.preview a:after,
-#c-comments #a-index div.post-preview[data-flags~="deleted"] div.preview a:after,
-article.post-preview[data-flags~="deleted"] a:after {
-    content: "\274C";
+    #c-comments #a-show  div.post-preview[data-flags~="deleted"] div.preview a:after,
+    #c-comments #a-index div.post-preview[data-flags~="deleted"] div.preview a:after,
+    article.post-preview[data-flags~="deleted"] a:after {
+        content: "\274C";
 
-    position: absolute;
-    bottom:   0;
-    left:     0;
-}
+        position: absolute;
+        bottom:   0;
+        left:     0;
+    }
 
-#c-comments #a-show  div.post-preview[data-flags~="banned"] div.preview a:after,
-#c-comments #a-index div.post-preview[data-flags~="banned"] div.preview a:after,
-article.post-preview[data-flags~="banned"] a:after {
-    content: "\270B";
+    #c-comments #a-show  div.post-preview[data-flags~="banned"] div.preview a:after,
+    #c-comments #a-index div.post-preview[data-flags~="banned"] div.preview a:after,
+    article.post-preview[data-flags~="banned"] a:after {
+        content: "\270B";
 
-    position: absolute;
-    bottom:   0;
-    left:     0;
+        position: absolute;
+        bottom:   0;
+        left:     0;
+    }
 }
