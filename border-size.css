@@ -1,0 +1,42 @@
+/* Increase the pending/flagged/parent/child-indicator border width from 2px to 3px. */
+.post-preview img {
+    border-width: 3px !important;
+}
+
+/* Compensate for the new border size for thumbnails on the comments page. */
+div#c-comments div#a-index div.preview,
+div#c-comments div#a-show  div.preview {
+    /* 150px + (border-width * 2) */
+    width:  156px !important;
+    height: 156px !important;
+    
+    margin: -1px 29px -1px -1px !important;
+}
+
+/* Compensate for the new border size for thumbnails everywhere else. */
+article.post-preview {
+    /* 150px + (border-width * 2) */
+    width:  156px !important;
+    height: 156px !important;
+
+    /* 
+     * For every 1px of border we add, we must subtract 1px of margin from
+     * the default margins (0px 10px 10px 0px) to keep the layout from shifting around.
+     */
+    margin: -1px 9px  9px -1px !important;
+}
+
+/* Compensate for a container div that sets overflow: hidden for no apparent reason and clips the border. */
+#c-posts #a-index #posts > div:nth-child(1) {
+    overflow: visible !important;
+}
+
+/* Compensate for the new border size for animated/translated thumbnail overlay icons. */
+div#c-comments div#a-index div.post-preview div.preview:before,
+div#c-comments div#a-show  div.post-preview div.preview:before,
+div#c-comments div#a-index div.post-preview div.preview a:before,
+div#c-comments div#a-show  div.post-preview div.preview a:before,
+article.post-preview:before,
+article.post-preview a:before {
+    margin: 3px !important;
+}
