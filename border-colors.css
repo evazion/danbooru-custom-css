@@ -1,0 +1,22 @@
+/* Do a search & replace to the colors however you like. Use transparent to hide a border type. */
+
+.post-preview.post-status-flagged      img { border-color: red       !important; }
+.post-preview.post-status-pending      img { border-color: blue      !important; }
+.post-preview.post-status-deleted      img { border-color: black     !important; }
+.post-preview.post-status-has-children img { border-color: limegreen !important; }
+.post-preview.post-status-has-parent   img { border-color: orange    !important; }
+
+.post-preview.post-status-has-children.post-status-deleted img { border-color: limegreen black black limegreen !important; }
+.post-preview.post-status-has-parent.post-status-deleted   img { border-color: orange    black black orange    !important; }
+
+.post-preview.post-status-has-children.post-status-pending img { border-color: limegreen blue blue limegreen !important; }
+.post-preview.post-status-has-parent.post-status-pending   img { border-color: orange    blue blue orange    !important; }
+
+.post-preview.post-status-has-children.post-status-flagged img { border-color: limegreen red red limegreen !important; }
+.post-preview.post-status-has-parent.post-status-flagged   img { border-color: orange    red red orange    !important; }
+
+.post-preview.post-status-has-children.post-status-has-parent img { border-color: limegreen orange limegreen orange !important; }
+
+.post-preview.post-status-has-children.post-status-has-parent.post-status-deleted img { border-color: limegreen black black orange !important; }
+.post-preview.post-status-has-children.post-status-has-parent.post-status-pending img { border-color: limegreen blue  blue  orange !important; }
+.post-preview.post-status-has-children.post-status-has-parent.post-status-flagged img { border-color: limegreen red   red   orange !important; }
