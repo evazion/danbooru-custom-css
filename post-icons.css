@@ -1,5 +1,3 @@
-/* XXX do an icon in the lower left for pending/flagged/deleted. */
-
 /* These settings are required to properly align the icons. */
 .post-preview a {
     display:  inline-block;
@@ -17,15 +15,16 @@ div#c-comments div#a-show  div.post-preview div.preview a:after,
 article.post-preview:before,
 article.post-preview a:before,
 article.post-preview a:after {
-    font-family: Tahoma, Arial, sans-serif;
-    font-size:   13px !important;
-    line-height: 18px !important;    /* vertical alignment of the icon */
-    width:       20px !important;
-    height:      20px !important;
-
-    margin: 2px;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
+
+    font-family: Tahoma, Arial, sans-serif;
+    font-size:   14px !important;
+    line-height: 20px !important;
+
+    margin: 2px;
+    width:  20px !important;
+    height: 20px !important;
 
     /* Prevent the icon from getting in the way of clicking on the thumbnail. */
     pointer-events: none;
@@ -51,4 +50,46 @@ article.post-preview[data-tags~="translated"] a:before {
     position: absolute;
     bottom:   0;
     right:    0;
+}
+
+#c-comments #a-show  div.post-preview[data-flags~="pending"] div.preview a:after,
+#c-comments #a-index div.post-preview[data-flags~="pending"] div.preview a:after,
+article.post-preview[data-flags~="pending"] a:after {
+    content: "\1F552";
+
+    position: absolute;
+    bottom:   0;
+    left:     0;
+}
+
+#c-comments #a-show  div.post-preview[data-flags~="flagged"] div.preview a:after,
+#c-comments #a-index div.post-preview[data-flags~="flagged"] div.preview a:after,
+article.post-preview[data-flags~="flagged"] a:after {
+    content: "\2691";
+
+    font-size: 20px !important;
+
+    position: absolute;
+    bottom:   0;
+    left:     0;
+}
+
+#c-comments #a-show  div.post-preview[data-flags~="deleted"] div.preview a:after,
+#c-comments #a-index div.post-preview[data-flags~="deleted"] div.preview a:after,
+article.post-preview[data-flags~="deleted"] a:after {
+    content: "\274C";
+
+    position: absolute;
+    bottom:   0;
+    left:     0;
+}
+
+#c-comments #a-show  div.post-preview[data-flags~="banned"] div.preview a:after,
+#c-comments #a-index div.post-preview[data-flags~="banned"] div.preview a:after,
+article.post-preview[data-flags~="banned"] a:after {
+    content: "\270B";
+
+    position: absolute;
+    bottom:   0;
+    left:     0;
 }
