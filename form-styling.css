@@ -107,7 +107,7 @@
     }
 
     /* Make the tag edit box resizeable in the popout edit box. */
-    #c-posts #a-show #edit-dialog #post_tag_string { resize: vertical !important; }
+    #edit-dialog #post_tag_string { resize: vertical !important; }
 
     /* Left align Find Similar thumbnails with the rest of the form. */
     #c-posts #a-show #iqdb-similar article {
