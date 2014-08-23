@@ -1,10 +1,24 @@
+/*
+ * Add a small gap between thumbnails and thumbnails border. This makes
+ * thumbnail borders more legible when the thumbnail background is the same
+ * color as the border.
+ */
 @-moz-document domain(donmai.us) {
     .post-preview img {
-        padding:      2px;
+        /* Play with these to change the border and gap sizes. */
         border-width: 2px !important;
+        padding:      2px;
+
+        /*
+         * 'dotted' or 'dashed' can be nice choices here, but a little hard to
+         * get used to.
+         */
         border-style: solid;
 
-        /* This prevents the increased padding and borders from increasing the overall thumbnail size and throwing off the layout. */
+        /*
+         * Prevent the increased padding from increasing the overall thumbnail
+         * size and throwing off the layout.
+         */
         box-sizing: border-box;
         max-width:  154px;
         max-height: 154px;
