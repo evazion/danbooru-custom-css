@@ -1,22 +1,30 @@
 /*
- * Display a purple border around posts in pools.
+ * Display a purple border around posts that are in pools.
  * Don't display any borders for status:flagged/pending/deleted.
+ * Tweak parent/child border colors so they contrast better against a white background.
  */
+@-moz-document domain(donmai.us) {
 
-.post-preview.post-status-flagged      img { border-color: transparent !important; }
-.post-preview.post-status-pending      img { border-color: transparent !important; }
-.post-preview.post-status-deleted      img { border-color: transparent !important; }
-.post-preview[data-pools^="pool:"]     img { border-color: #A0A        !important; }
-.post-preview.post-status-has-children img { border-color: limegreen   !important; }
-.post-preview.post-status-has-parent   img { border-color: orange      !important; }
+    .post-preview.post-status-flagged      img { border-color: transparent !important; }
+    .post-preview.post-status-pending      img { border-color: transparent !important; }
+    .post-preview.post-status-deleted      img { border-color: transparent !important; }
+    .post-preview[data-pools^="pool:"]     img { border-color: #A0A        !important; }
+    .post-preview.post-status-has-children img { border-color: limegreen   !important; }
+    .post-preview.post-status-has-parent   img { border-color: orange      !important; }
 
-.post-preview[data-pools^="pool:"].post-status-has-children img { border-color: limegreen #A0A #A0A limegreen !important; }
-.post-preview[data-pools^="pool:"].post-status-has-parent   img { border-color: orange    #A0A #A0A orange    !important; }
+    .post-preview[data-pools^="pool:"].post-status-has-children img {
+        border-color: limegreen #A0A #A0A limegreen !important;
+    }
 
-.post-preview.post-status-has-children.post-status-has-parent img {
-    border-color: limegreen orange limegreen orange !important;
-}
+    .post-preview[data-pools^="pool:"].post-status-has-parent img {
+        border-color: orange    #A0A #A0A orange    !important;
+    }
 
-.post-preview[data-pools^="pool:"].post-status-has-children.post-status-has-parent img {
-    border-color: limegreen #A0A #A0A orange !important;
+    .post-preview.post-status-has-children.post-status-has-parent img {
+        border-color: limegreen orange limegreen orange !important;
+    }
+
+    .post-preview[data-pools^="pool:"].post-status-has-children.post-status-has-parent img {
+        border-color: limegreen #A0A #A0A orange !important;
+    }
 }
