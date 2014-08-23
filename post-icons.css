@@ -1,4 +1,9 @@
-@-moz-document domain('donmai.us') {
+/*
+ * - Add icons in the bottom left corner of thumbnails for status pending,
+ *   deleted, flagged, and banned.
+ * - Add icons for translated / translation_request in the bottom right corner.
+ */
+@-moz-document domain(donmai.us) {
     /* These settings are required to properly align the icons. */
     .post-preview a {
         display:  inline-block;
@@ -6,7 +11,6 @@
     }
 
     /* General settings for all thumbnail icons. */
-
     div#c-comments div#a-index div.post-preview div.preview:before,
     div#c-comments div#a-index div.post-preview div.preview a:before,
     div#c-comments div#a-index div.post-preview div.preview a:after,
@@ -22,6 +26,7 @@
         font-family: Tahoma, Arial, sans-serif;
         font-size:   14px !important;
         line-height: 20px !important;
+        text-align:  center;
 
         margin: 2px;
         width:  20px !important;
@@ -56,7 +61,14 @@
     #c-comments #a-show  div.post-preview[data-flags~="pending"] div.preview a:after,
     #c-comments #a-index div.post-preview[data-flags~="pending"] div.preview a:after,
     article.post-preview[data-flags~="pending"] a:after {
-        content: "\1F552";
+        content: "\25D5";
+
+        /*
+         * These are ad hoc values chosen to make the symbol align better. They
+         * need to be tweaked for different icons or fonts.
+         */
+        font-size:   16px !important;
+        line-height: 16px !important;
 
         position: absolute;
         bottom:   0;
@@ -88,7 +100,9 @@
     #c-comments #a-show  div.post-preview[data-flags~="banned"] div.preview a:after,
     #c-comments #a-index div.post-preview[data-flags~="banned"] div.preview a:after,
     article.post-preview[data-flags~="banned"] a:after {
-        content: "\270B";
+        content: "\26D4";
+
+        font-size: 14px !important;
 
         position: absolute;
         bottom:   0;
