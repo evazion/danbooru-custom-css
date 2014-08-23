@@ -1,0 +1,135 @@
+/*
+ * - Restyle all buttons and edit boxes into something a bit nicer looking than
+ *   the browser default.
+ * - Redesign the Edit form on posts to take up less vertical space and to make
+ *   the source & tag edit boxes wide enough to see what we're doing.
+ */
+@-moz-document domain(donmai.us) {
+    /* Restyle buttons and edit boxes into something a bit nicer than the
+     * browser default. This is designed to match the buttons used in
+     * Danbooru's various jQuery dialogs. */
+    button, input, select, textarea {
+        border:  1px solid #D3D3D3;
+        color:   #555;
+        padding: 4px;
+
+        /*
+         * Keep the increased padding from increasing the overall width/height
+         * of the element and throwing off the layout.
+         */
+        box-sizing: border-box;
+    }
+
+    button:hover, input[type="submit"]:hover {
+        border:     1px solid #999;
+        background: #dadada;
+        color:      #212121
+    }
+
+    select {
+        background: white;
+    }
+
+    /* /users page. */
+
+    /* Make tag blacklist and custom CSS boxes bigger. */
+    #c-users textarea {
+        width:  100% !important;
+        height: 15em;
+    }
+
+    /* /posts/1234 page. */
+
+    /* Add margins above & below the Comments / Edit / Share links. */
+    #c-posts #a-show menu#post-sections {
+        margin: 1em 0 !important;
+    }
+
+    /* Optional: Hide the Fetch Source Info box. It can be useful, but it tends to get in the way. */
+    #c-posts #a-show #source-info {
+        display: none;
+    }
+
+    /* Move form labels to the left of input elements instead of above them. */
+    #c-posts #a-show #edit #form .input > label,      /* Rating / Lock / Parent / Source labels */
+    #c-posts #a-show #edit #form .input > div > label /* Tags label */ {
+        display:   inline-block;
+        min-width: 10%;
+    }
+
+    /* Make the Parent ID / Tags input boxes wider. */
+    #c-posts #a-show #edit #form #post_parent_id,
+    #c-posts #a-show #edit #form textarea#post_tag_string {
+        width: 89%;
+    }
+
+    /* Size the Source input box to accomodate the Similar & Artist buttons. */
+    #c-posts #a-show #edit #form #post_source {
+        width: 73%;
+    }
+
+    #c-posts #a-show #edit #form #similar-button,
+    #c-posts #a-show #edit #form #find-artist-button {
+        width: 7.5%;
+    }
+
+    /* Put a margin between the tag edit box and the related tags buttons. */
+    #c-posts #a-show #post_tag_string {
+        margin-bottom: 1em;
+        height: 12em !important;
+        resize: vertical;
+    }
+
+    /* Left align the related tags buttons beneath the tag edit form. */
+    #c-posts #a-show #related-tags-button,
+    #c-posts #a-show #related-artists-button,
+    #c-posts #a-show #related-characters-button,
+    #c-posts #a-show #related-copyrights-button,
+    #c-posts #a-show #edit #form input[type="submit"] {
+        position: relative;
+        left:     10%;
+        margin:   0 5px;
+    }
+
+    /* Move the link to the tag edit dialog to the top right of the tag edit form. */
+    #c-posts #a-show #open-edit-dialog {
+        position: absolute;
+
+        /* 6px = 4px of textarea padding + 1px of textarea border + 1px of button border.  */
+        right:  6px;
+        top:    0px;
+        margin: 0;
+    }
+
+    /* Anchor the tag edit box container div so we can reposition the tag edit dialog link as per above. */
+    #c-posts #a-show div.input:nth-child(13) {
+        position: relative;
+    }
+
+    /* Make the tag edit box resizeable in the popout edit box. */
+    #c-posts #a-show #edit-dialog #post_tag_string { resize: vertical !important; }
+
+    /* Left align Find Similar thumbnails with the rest of the form. */
+    #c-posts #a-show #iqdb-similar article {
+        position: relative;
+        left:     10%;
+    }
+
+    /* Anchor the Find Similar thumbnail container div so we can reposition the thumbnails as per above. */
+    #c-posts #a-show #iqdb-similar {
+        position: relative;
+    }
+
+    /* Improve padding for when the artist column wraps around beneath a related tags column. */
+    #c-posts #a-show #related-tags             { padding: 0; }
+    #c-posts #a-show #related-tags-container   { padding: 0; }
+    #c-posts #a-show #related-tags .tag-column { margin:  1em; }
+
+    /* Optional. Make the related tags box scrollable when it's too tall. */
+    /*
+    #c-posts #a-show #related-tags {
+        max-height: 20em;
+        overflow-y: auto;
+    }
+    */
+}
