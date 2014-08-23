@@ -1,0 +1,30 @@
+@-moz-document domain(donmai.us) {
+    .post-preview img {
+        padding:      2px;
+        border-width: 2px !important;
+        border-style: solid;
+
+        /* This prevents the increased padding and borders from increasing the overall thumbnail size and throwing off the layout. */
+        box-sizing: border-box;
+        max-width:  154px;
+        max-height: 154px;
+    }
+
+    /*
+     * Compensate for the increased padding so that animated/translated
+     * thumbnail overlay icons align properly. This takes so many rules because
+     * the comments page uses different markup than everywhere else.
+     */
+    div#c-comments div#a-index div.post-preview div.preview:before,
+    div#c-comments div#a-index div.post-preview div.preview a:before,
+    div#c-comments div#a-index div.post-preview div.preview a:after,
+    div#c-comments div#a-show  div.post-preview div.preview:before,
+    div#c-comments div#a-show  div.post-preview div.preview a:before,
+    div#c-comments div#a-show  div.post-preview div.preview a:after,
+    article.post-preview:before,
+    article.post-preview a:before,
+    article.post-preview a:after {
+        /* margin = padding + border-width from above */
+        margin: 4px !important;
+    }
+}
