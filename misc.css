@@ -1,6 +1,58 @@
-/* Hide the "+ -" links in "? + - touhou 100k" in tag lists. */
-.search-inc-tag { display: none; }
-.search-exl-tag { display: none; }
+@-moz-document domain(donmai.us) {
+    /* Hide the "+ -" links in "? + - touhou 100k" in tag lists. */
+    .search-inc-tag { display: none; }
+    .search-exl-tag { display: none; }
 
-/* Make the forum updated italicized link shut the fuck up. (issue #2229) */
-.forum-updated { font-style: normal !important; }
+    /* Make the forum updated link shut the fuck up. (issue #2229) */
+    .forum-updated {
+        font-style: normal !important;
+    }
+
+    /* Hide the Go button next to the search box. */
+    #c-posts #search-box form > input:nth-child(4) {
+        display: none;
+    }
+
+    /* Make the search box and mode menu wider. */
+    #c-posts #tags,
+    #c-posts #a-index #mode-box form > select:nth-child(1) {
+        width: 100% !important;
+    }
+
+    /* Make the top of the tag sidebar align properly with the top of the main content area. */
+    #c-posts #a-show #search-box {
+        margin-top: 0px;
+    }
+
+    /* Hide the tag list headers... */
+    #c-posts #a-show #sidebar #search-box h1,
+    #c-posts #a-show #sidebar #tag-list h1,
+    #c-posts #a-show #sidebar #tag-list h2 {
+        display: none;
+    }
+
+    /* ...and remove the resulting gaps between the tag list subsections. */
+    #c-posts #a-show #tag-list ul {
+        margin-bottom: 0px;
+    }
+
+    /*
+     * Make the sidebar font smaller so that the tag list takes up a bit less
+     * vertical space and long tag names don't linewrap as often.
+     */
+    #c-posts #sidebar {
+        font-size: 12px;
+    }
+
+    /*
+     * Optional: Limit the height of the tag list and make it scrollable. This
+     * lets you scroll through long tag lists while still keeping the post in
+     * view. Can be handy for editing tags, but hard to get used to.
+     */
+    /*
+    #c-posts #a-show #tag-list {
+        max-height: 30em;
+        overflow-y: scroll;
+    }
+    */
+}
